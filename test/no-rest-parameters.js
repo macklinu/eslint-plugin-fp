@@ -25,6 +25,7 @@ ruleTester.run('no-rest-parameters', rule, {
     'var foo = (a, b) => a + b;',
     'function foo() { console.log(arguments); }',
     'var a = [...b, c]',
+    'function f(params) { const [head, ...tail] = params }',
     {
       code: 'var a = {...b, c: 1}',
       parserOptions: {

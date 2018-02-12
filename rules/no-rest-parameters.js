@@ -3,6 +3,9 @@
 const create = function (context) {
   return {
     RestElement(node) {
+      if (node.parent.type === 'ArrayPattern') {
+        return;
+      }
       context.report({
         node,
         message: 'Unallowed use of rest parameters. Use regular function arguments instead'
